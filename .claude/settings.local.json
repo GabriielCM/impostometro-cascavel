@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm create:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm build:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd //c \"taskkill /PID 28628 /F\")",
+      "Bash(cmd //c \"taskkill /PID 29500 /F\")",
+      "Bash(cmd.exe //c \"taskkill /PID 26960 /F\")",
+      "Bash(cmd.exe //c \"taskkill /PID 5324 /F\")",
+      "Bash(cmd.exe //c \"taskkill /PID 29388 /F\")"
+    ]
+  }
+}
