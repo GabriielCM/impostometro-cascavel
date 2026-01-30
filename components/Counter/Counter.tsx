@@ -18,11 +18,11 @@ export function Counter() {
 
       {/* Contador principal */}
       <div className="flex items-center justify-center">
-        <span className="text-primary text-3xl md:text-4xl lg:text-5xl mr-2 font-bold">
+        <span className="text-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl mr-1 sm:mr-2 font-bold">
           R$
         </span>
         <div
-          className="font-digital text-counter md:text-counter-lg lg:text-counter-xl text-primary counter-glow"
+          className="font-digital text-4xl sm:text-counter md:text-counter-lg lg:text-counter-xl text-primary counter-glow whitespace-nowrap"
         >
           {digits.map((digit, index) => (
             <Digit key={index} value={digit} isAnimating={isAnimating} />
