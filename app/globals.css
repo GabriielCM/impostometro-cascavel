@@ -103,6 +103,22 @@ body {
 .animate-delay-300 { animation-delay: 0.3s; }
 .animate-delay-400 { animation-delay: 0.4s; }
 
+/* Borda pulsante amarela */
+@keyframes border-pulse {
+  0%, 100% {
+    border-color: rgba(255, 215, 0, 1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    border-color: rgba(255, 215, 0, 0);
+    box-shadow: 0 0 0px rgba(255, 215, 0, 0);
+  }
+}
+
+.border-pulse {
+  animation: border-pulse 2s ease-in-out infinite;
+}
+
 /* Botões */
 .btn-primary {
   background: var(--primary);
