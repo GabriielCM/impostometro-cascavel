@@ -9,24 +9,9 @@ interface PurchasableCardProps {
 }
 
 export function PurchasableCard({ item }: PurchasableCardProps) {
-  const { quantity, progress, remaining, years, remainingMonths } = usePurchasableCounter(item)
+  const { quantity, progress, remaining } = usePurchasableCounter(item)
 
   const renderQuantityLabel = () => {
-    if (item.type === 'rental' && years !== undefined && remainingMonths !== undefined) {
-      if (years === 0) {
-        return (
-          <span className="text-sm text-muted-light dark:text-muted-dark">
-            {quantity} {quantity === 1 ? item.unit : item.unitPlural}
-          </span>
-        )
-      }
-      return (
-        <span className="text-sm text-muted-light dark:text-muted-dark">
-          {years} {years === 1 ? 'ano' : 'anos'}
-          {remainingMonths > 0 && ` e ${remainingMonths} ${remainingMonths === 1 ? 'mês' : 'meses'}`}
-        </span>
-      )
-    }
     return (
       <span className="text-sm text-muted-light dark:text-muted-dark">
         {quantity === 1 ? item.unit : item.unitPlural}
