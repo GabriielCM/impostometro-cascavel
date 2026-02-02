@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#1a1a1a"/>
+  <rect x="20" y="20" width="160" height="160" fill="#2a2a2a" stroke="#FFD700" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="100" y="95" text-anchor="middle" fill="#FFD700" font-family="Arial" font-size="14">IMAGEM</text>
+  <text x="100" y="115" text-anchor="middle" fill="#FFD700" font-family="Arial" font-size="14">PLACEHOLDER</text>
+</svg>

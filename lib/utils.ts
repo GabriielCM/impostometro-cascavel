@@ -80,3 +80,19 @@ export function getShareUrl(platform: 'twitter' | 'facebook' | 'whatsapp'): stri
 export function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3)
 }
+
+// Formata valor abreviado (ex: 2.4mi, 150k)
+export function formatCompactCurrency(value: number): string {
+  if (value >= 1_000_000) {
+    return `R$ ${(value / 1_000_000).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} mi`
+  }
+  if (value >= 1_000) {
+    return `R$ ${(value / 1_000).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} mil`
+  }
+  return formatCurrency(value)
+}
+
+// Formata número grande com separador de milhares
+export function formatLargeNumber(value: number): string {
+  return new Intl.NumberFormat('pt-BR').format(Math.floor(value))
+}

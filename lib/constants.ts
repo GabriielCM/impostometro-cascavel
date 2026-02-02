@@ -60,3 +60,89 @@ export const COUNTER_CONFIG = {
   animationDuration: 2500, // ms para animação inicial (mais suave)
   decimalPlaces: 0,
 } as const
+
+// Tipos para itens compráveis
+export type PurchasableItemType = 'default' | 'rental'
+
+export interface PurchasableItem {
+  id: string
+  name: string
+  unitCost: number
+  unit: string
+  unitPlural: string
+  image: string
+  reference: string
+  source: string
+  type: PurchasableItemType
+}
+
+// Itens que poderiam ser comprados/construídos com o valor arrecadado
+// Ordenados por valor unitário (maior primeiro)
+export const PURCHASABLE_ITEMS: PurchasableItem[] = [
+  {
+    id: 'super-cmei',
+    name: 'Super CMEI',
+    unitCost: 7_200_000,
+    unit: 'unidade',
+    unitPlural: 'unidades',
+    image: '/images/items/super-cmei.svg',
+    reference: 'Construção do Super CMEI Prof. Paulo Marques',
+    source: 'Prefeitura de Cascavel',
+    type: 'default',
+  },
+  {
+    id: 'usf',
+    name: 'USF',
+    unitCost: 2_000_000,
+    unit: 'unidade',
+    unitPlural: 'unidades',
+    image: '/images/items/usf.svg',
+    reference: 'Construção da USF Santo Inácio',
+    source: 'Prefeitura de Cascavel',
+    type: 'default',
+  },
+  {
+    id: 'viatura-caminhonete',
+    name: 'Locação caminhonete GCM',
+    unitCost: 10_437,
+    unit: 'mês',
+    unitPlural: 'meses',
+    image: '/images/items/viatura-caminhonete.svg',
+    reference: 'Viatura para Guarda Municipal',
+    source: 'Pregão Eletrônico nº 124/2025',
+    type: 'rental',
+  },
+  {
+    id: 'viatura-suv',
+    name: 'Locação SUV GCM',
+    unitCost: 7_418,
+    unit: 'mês',
+    unitPlural: 'meses',
+    image: '/images/items/viatura-suv.svg',
+    reference: 'Viatura para Guarda Municipal',
+    source: 'Pregão Eletrônico nº 124/2025',
+    type: 'rental',
+  },
+  {
+    id: 'poste-luz',
+    name: 'Poste de Luz',
+    unitCost: 726.65,
+    unit: 'poste',
+    unitPlural: 'postes',
+    image: '/images/items/poste-luz.svg',
+    reference: 'Iluminação pública',
+    source: 'Pregão Eletrônico nº 100/2025',
+    type: 'default',
+  },
+  {
+    id: 'pavimentacao',
+    name: 'Pavimentação',
+    unitCost: 256.95,
+    unit: 'm²',
+    unitPlural: 'm²',
+    image: '/images/items/pavimentacao.svg',
+    reference: 'Pavimentação asfáltica',
+    source: 'Concorrência Pública 21/2025',
+    type: 'default',
+  },
+] as const

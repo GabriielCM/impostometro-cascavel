@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { BUDGET_2026 } from '@/lib/constants'
+import { BUDGET_2026, PURCHASABLE_ITEMS } from '@/lib/constants'
 import { formatCurrency } from '@/lib/utils'
 
 export function MethodologyModal() {
@@ -93,6 +93,26 @@ export function MethodologyModal() {
                 e repasses, mas esta estimativa fornece uma visualização intuitiva do volume
                 de recursos que o município recebe.
               </p>
+            </section>
+
+            <section>
+              <h3 className="font-semibold text-text-light dark:text-text-dark mb-2">
+                Referências dos Valores
+              </h3>
+              <p className="mb-2">
+                Os valores utilizados na seção &ldquo;Isso já pagaria&rdquo; foram obtidos de licitações e contratos públicos:
+              </p>
+              <ul className="list-disc pl-5 space-y-1">
+                {PURCHASABLE_ITEMS.map((item) => (
+                  <li key={item.id}>
+                    <strong>{item.name}:</strong> {formatCurrency(item.unitCost)}/{item.unit}
+                    <br />
+                    <span className="text-xs opacity-75">
+                      {item.reference} - {item.source}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </section>
 
             <section>

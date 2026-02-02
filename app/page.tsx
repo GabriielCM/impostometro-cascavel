@@ -8,6 +8,7 @@ import { ShareButtons } from '@/components/ShareButtons'
 import { MethodologyModal } from '@/components/MethodologyModal'
 import { LeadsModal } from '@/components/LeadsModal'
 import { Footer } from '@/components/Footer'
+import { PurchasableCarousel } from '@/components/PurchasableItems'
 import { DateTime } from '@/components/Header/DateTime'
 import { LandingPage } from '@/components/LandingPage'
 import { LeadFormModal } from '@/components/LeadFormModal'
@@ -71,6 +72,9 @@ export default function Home() {
           <section className="py-8 md:py-12">
             <Counter />
           </section>
+
+          {/* Isso já pagaria - Carrossel de itens compráveis */}
+          <PurchasableCarousel />
 
           {/* Cards de métricas */}
           <section>

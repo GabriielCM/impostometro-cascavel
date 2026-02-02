@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#1a1a1a"/>
+  <rect x="20" y="80" width="160" height="100" fill="#2a2a2a" stroke="#FFD700" stroke-width="2"/>
+  <line x1="20" y1="110" x2="180" y2="110" stroke="#FFD700" stroke-width="1" stroke-dasharray="10,5"/>
+  <line x1="20" y1="140" x2="180" y2="140" stroke="#FFD700" stroke-width="1" stroke-dasharray="10,5"/>
+  <line x1="60" y1="80" x2="60" y2="180" stroke="#FFD700" stroke-width="1" stroke-dasharray="10,5"/>
+  <line x1="100" y1="80" x2="100" y2="180" stroke="#FFD700" stroke-width="1" stroke-dasharray="10,5"/>
+  <line x1="140" y1="80" x2="140" y2="180" stroke="#FFD700" stroke-width="1" stroke-dasharray="10,5"/>
+  <text x="100" y="40" text-anchor="middle" fill="#FFD700" font-family="Arial" font-size="12" font-weight="bold">PAVIMENTACAO</text>
+  <text x="100" y="60" text-anchor="middle" fill="#FFD700" font-family="Arial" font-size="10">m2</text>
+</svg>

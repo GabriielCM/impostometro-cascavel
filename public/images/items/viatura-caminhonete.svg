@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#1a1a1a"/>
+  <rect x="30" y="100" width="140" height="50" rx="5" fill="#2a2a2a" stroke="#FFD700" stroke-width="2"/>
+  <rect x="30" y="80" width="60" height="25" rx="3" fill="#2a2a2a" stroke="#FFD700" stroke-width="2"/>
+  <circle cx="60" cy="155" r="18" fill="#3a3a3a" stroke="#FFD700" stroke-width="2"/>
+  <circle cx="140" cy="155" r="18" fill="#3a3a3a" stroke="#FFD700" stroke-width="2"/>
+  <circle cx="60" cy="155" r="8" fill="#1a1a1a"/>
+  <circle cx="140" cy="155" r="8" fill="#1a1a1a"/>
+  <rect x="40" y="90" width="15" height="10" fill="#3a3a3a" stroke="#FFD700" stroke-width="1"/>
+  <rect x="60" y="90" width="15" height="10" fill="#3a3a3a" stroke="#FFD700" stroke-width="1"/>
+  <text x="100" y="30" text-anchor="middle" fill="#FFD700" font-family="Arial" font-size="12" font-weight="bold">CAMINHONETE</text>
+</svg>
