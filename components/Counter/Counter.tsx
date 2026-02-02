@@ -8,12 +8,12 @@ export function Counter() {
   const digits = formattedValue.split('')
 
   return (
-    <div className="relative flex flex-col items-center mt-12 sm:mt-16">
+    <div className="relative flex flex-col items-center mt-24 sm:mt-32">
       {/* Caricatura - corpo atrás de tudo */}
       <img
         src="/images/caricatura.png"
         alt="Caricatura"
-        className="absolute z-0 w-[340px] sm:w-[420px] md:w-[500px] lg:w-[580px] bottom-[52%] sm:bottom-[35%] left-1/2 -translate-x-1/2"
+        className="absolute z-0 w-[340px] sm:w-[420px] md:w-[500px] lg:w-[580px] bottom-[52%] sm:bottom-[40%] left-1/2 -translate-x-1/2"
       />
 
       {/* Container com borda pulsante */}
@@ -54,7 +54,7 @@ export function Counter() {
         src="/images/caricatura.png"
         alt=""
         aria-hidden="true"
-        className="absolute z-20 w-[340px] sm:w-[420px] md:w-[500px] lg:w-[580px] bottom-[52%] sm:bottom-[35%] left-1/2 -translate-x-1/2 pointer-events-none"
+        className="absolute z-20 w-[340px] sm:w-[420px] md:w-[500px] lg:w-[580px] bottom-[52%] sm:bottom-[40%] left-1/2 -translate-x-1/2 pointer-events-none"
         style={{ clipPath: 'inset(60% 0 0 0)' }}
       />
     </div>

@@ -1,16 +1,61 @@
 'use client'
 
+import { useState } from 'react'
 import { Header } from '@/components/Header'
 import { Counter } from '@/components/Counter'
 import { MetricsCards, TaxCards } from '@/components/Cards'
 import { ShareButtons } from '@/components/ShareButtons'
 import { MethodologyModal } from '@/components/MethodologyModal'
+import { LeadsModal } from '@/components/LeadsModal'
 import { Footer } from '@/components/Footer'
 import { DateTime } from '@/components/Header/DateTime'
+import { LandingPage } from '@/components/LandingPage'
+import { LeadFormModal } from '@/components/LeadFormModal'
+import { useLeadGate } from '@/hooks/useLeadGate'
 
 export default function Home() {
+  const { hasAccess, isLoading, grantAccess } = useLeadGate()
+  const [showForm, setShowForm] = useState(false)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const handleSuccess = () => {
+    setIsTransitioning(true)
+    setShowForm(false)
+    // Aguarda um pouco para a transição fade
+    setTimeout(() => {
+      grantAccess()
+      setIsTransitioning(false)
+    }, 300)
+  }
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-bg-light dark:bg-bg-dark">
+        <div className="animate-pulse text-primary text-2xl font-digital">
+          Carregando...
+        </div>
+      </div>
+    )
+  }
+
+  // Versão Short (Landing) - se não tem acesso
+  if (!hasAccess) {
+    return (
+      <div className={`transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        <LandingPage onSaibaMais={() => setShowForm(true)} />
+        <LeadFormModal
+          isOpen={showForm}
+          onClose={() => setShowForm(false)}
+          onSuccess={handleSuccess}
+        />
+      </div>
+    )
+  }
+
+  // Versão Completa - se tem acesso
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={`min-h-screen flex flex-col transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
       {/* Header */}
       <Header />
 
@@ -46,6 +91,7 @@ export default function Home() {
           {/* Ações */}
           <section className="flex flex-col sm:flex-row items-center justify-center gap-4 py-8">
             <MethodologyModal />
+            <LeadsModal />
             <ShareButtons />
           </section>
         </div>
