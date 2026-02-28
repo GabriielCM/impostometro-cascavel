@@ -6,7 +6,6 @@ import { Counter } from '@/components/Counter'
 import { MetricsCards, TaxCards } from '@/components/Cards'
 import { ShareButtons } from '@/components/ShareButtons'
 import { MethodologyModal } from '@/components/MethodologyModal'
-import { LeadsModal } from '@/components/LeadsModal'
 import { Footer } from '@/components/Footer'
 import { PurchasableCarousel } from '@/components/PurchasableItems'
 import { DateTime } from '@/components/Header/DateTime'
@@ -95,7 +94,6 @@ export default function Home() {
           {/* Ações */}
           <section className="flex flex-col sm:flex-row items-center justify-center gap-4 py-8">
             <MethodologyModal />
-            <LeadsModal />
             <ShareButtons />
           </section>
         </div>

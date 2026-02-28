@@ -1,7 +1,6 @@
 'use client'
 
 import { DateTime } from './DateTime'
-import { ThemeToggle } from '../ThemeToggle'
 
 export function Header() {
   return (
@@ -27,12 +26,11 @@ export function Header() {
           </div>
         </div>
 
-        {/* Lado direito: Data/hora e toggle */}
+        {/* Lado direito: Data/hora */}
         <div className="flex items-center gap-4 md:gap-6">
           <div className="hidden sm:block">
             <DateTime />
           </div>
-          <ThemeToggle />
         </div>
       </div>
     </header>
