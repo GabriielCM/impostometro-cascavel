@@ -46,6 +46,37 @@ export const TAX_BREAKDOWN = {
   },
 } as const
 
+// Despesas do Orçamento Municipal 2026
+// Fonte: LOA 2026 - pág. 27 - Consolidado Geral
+export const EXPENSES = {
+  pessoal: {
+    name: 'Despesas com Pessoal',
+    value: 1_300_000_000,
+    note: 'Folha de pagamento, 13º, aumento, benefícios',
+    reference: 'LOA 2026 - pág. 27 - Consolidado Geral',
+  },
+  investimento: {
+    name: 'Investimento',
+    value: 139_000_000,
+    note: 'Construção de escolas, unidades de saúde, pavimentação, etc',
+    reference: 'LOA 2026 - pág. 27 - Consolidado Geral',
+  },
+} as const
+
+// Custo per capita das despesas - LOA 2026
+export const PER_CAPITA_EXPENSES = {
+  pessoal: {
+    name: 'Despesas com Pessoal',
+    value: 3_631,
+    unit: 'habitante / ano',
+  },
+  investimento: {
+    name: 'Investimento',
+    value: 494.50,
+    unit: 'habitante / ano',
+  },
+} as const
+
 // Informações sobre o município
 export const CITY_INFO = {
   name: 'Cascavel',

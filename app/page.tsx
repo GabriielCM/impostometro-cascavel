@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Header } from '@/components/Header'
 import { Counter } from '@/components/Counter'
-import { MetricsCards, TaxCards } from '@/components/Cards'
+import { MetricsCards, TaxCards, ExpenseCards, PerCapitaCards } from '@/components/Cards'
 import { ShareButtons } from '@/components/ShareButtons'
 import { MethodologyModal } from '@/components/MethodologyModal'
 import { Footer } from '@/components/Footer'
@@ -81,6 +81,22 @@ export default function Home() {
               Taxa de Arrecadação
             </h2>
             <MetricsCards />
+          </section>
+
+          {/* Cards de despesas */}
+          <section>
+            <h2 className="text-lg font-semibold text-text-light dark:text-text-dark mb-4">
+              Despesas
+            </h2>
+            <ExpenseCards />
+          </section>
+
+          {/* Você paga - per capita */}
+          <section>
+            <h2 className="text-lg font-semibold text-text-light dark:text-text-dark mb-4">
+              Você Paga
+            </h2>
+            <PerCapitaCards />
           </section>
 
           {/* Cards de impostos */}
