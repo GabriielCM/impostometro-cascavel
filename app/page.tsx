@@ -55,7 +55,7 @@ export default function Home() {
 
   // Versão Completa - se tem acesso
   return (
-    <div className={`min-h-screen flex flex-col transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`min-h-screen flex flex-col transition-opacity duration-500 relative z-[2] ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
       {/* Header */}
       <Header />
 

@@ -11,7 +11,27 @@
       "Bash(cmd //c \"taskkill /PID 29500 /F\")",
       "Bash(cmd.exe //c \"taskkill /PID 26960 /F\")",
       "Bash(cmd.exe //c \"taskkill /PID 5324 /F\")",
-      "Bash(cmd.exe //c \"taskkill /PID 29388 /F\")"
+      "Bash(cmd.exe //c \"taskkill /PID 29388 /F\")",
+      "Bash(pnpm lint:*)",
+      "Bash(copy \"c:\\\\Users\\\\mdcar\\\\OneDrive\\\\Área de Trabalho\\\\impostometro-Cascavel\\\\components\\\\images\\\\caricatura-.png\" \"c:\\\\Users\\\\mdcar\\\\OneDrive\\\\Área de Trabalho\\\\impostometro-Cascavel\\\\public\\\\images\\\\caricatura.png\")",
+      "Bash(pnpm dev:*)",
+      "Bash(git push)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(pnpm add:*)",
+      "Bash(npx tsc --noEmit)",
+      "WebFetch(domain:codepen.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:www.svgrepo.com)",
+      "Bash(curl -sL \"https://www.svgrepo.com/download/434154/money-mouth-face.svg\" -o /tmp/money-mouth-face.svg)",
+      "Bash(curl -sL \"https://www.svgrepo.com/download/302129/coin-money.svg\" -o /tmp/coin-money.svg)",
+      "Bash(curl -sL \"https://www.svgrepo.com/download/396014/christmas-tree.svg\" -o /tmp/christmas-tree.svg)",
+      "Bash(curl -sL -H \"User-Agent: Mozilla/5.0\" \"https://www.svgrepo.com/download/397523/money-with-wings.svg\")",
+      "Bash(curl -sL -H \"User-Agent: Mozilla/5.0\" \"https://www.svgrepo.com/download/434154/money-mouth-face.svg\")",
+      "Bash(curl -sL -H \"User-Agent: Mozilla/5.0\" \"https://www.svgrepo.com/download/302129/coin-money.svg\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/nicolo-ribaudo/noto-emoji-svgs/refs/heads/main/emojis/1f4b8.svg\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/nicolo-ribaudo/noto-emoji-svgs/refs/heads/main/emojis/1f911.svg\")"
     ]
   }
 }

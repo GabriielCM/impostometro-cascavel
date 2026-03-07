@@ -62,7 +62,7 @@ export function MoneyRain() {
 
   return (
     <div
-      className="absolute top-0 left-0 w-full z-0 pointer-events-none overflow-hidden"
+      className="absolute top-0 left-0 w-full z-[1] pointer-events-none overflow-hidden"
       style={{
         height: `${pageHeight}px`,
         ['--page-height' as string]: `${pageHeight}px`,
