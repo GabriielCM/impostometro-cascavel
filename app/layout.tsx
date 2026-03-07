@@ -108,7 +108,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} bg-background-dark min-h-screen`}>
+      <body className={`${inter.className} bg-background-dark min-h-screen relative`}>
         <MoneyRain />
         {children}
 

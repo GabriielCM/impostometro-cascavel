@@ -20,10 +20,10 @@ interface BillConfig {
   icon: string
 }
 
-const BILL_COUNT = 15
+const BASE_BILL_COUNT = 15
 
-function generateBills(): BillConfig[] {
-  return Array.from({ length: BILL_COUNT }, (_, i) => ({
+function generateBills(count: number): BillConfig[] {
+  return Array.from({ length: count }, (_, i) => ({
     id: i,
     left: Math.random() * 95,
     duration: 8 + Math.random() * 10,
@@ -37,16 +37,36 @@ function generateBills(): BillConfig[] {
 
 export function MoneyRain() {
   const [bills, setBills] = useState<BillConfig[]>([])
+  const [pageHeight, setPageHeight] = useState(0)
 
   useEffect(() => {
-    setBills(generateBills())
+    function updateHeight() {
+      const height = document.documentElement.scrollHeight
+      setPageHeight(height)
+
+      const viewportHeight = window.innerHeight
+      const ratio = Math.max(1, height / viewportHeight)
+      const count = Math.ceil(BASE_BILL_COUNT * ratio)
+      setBills(generateBills(count))
+    }
+
+    updateHeight()
+
+    const observer = new ResizeObserver(updateHeight)
+    observer.observe(document.body)
+
+    return () => observer.disconnect()
   }, [])
 
-  if (bills.length === 0) return null
+  if (bills.length === 0 || pageHeight === 0) return null
 
   return (
     <div
-      className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
+      className="absolute top-0 left-0 w-full z-0 pointer-events-none overflow-hidden"
+      style={{
+        height: `${pageHeight}px`,
+        ['--page-height' as string]: `${pageHeight}px`,
+      }}
       aria-hidden="true"
     >
       {bills.map((bill) => (
