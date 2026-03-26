@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 
 interface LeadData {
   nome: string
-  email: string
-  cidade: string
   dataNascimento: string
   telefone: string
 }
@@ -12,17 +10,6 @@ function validateLead(data: LeadData): string | null {
   // Nome validation
   if (!data.nome || data.nome.trim().length < 2) {
     return 'Nome inválido'
-  }
-
-  // Email validation
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (!data.email || !emailRegex.test(data.email)) {
-    return 'Email inválido'
-  }
-
-  // Cidade validation
-  if (!data.cidade || data.cidade.trim().length < 2) {
-    return 'Cidade inválida'
   }
 
   // Data nascimento validation (DD/MM/AAAA)

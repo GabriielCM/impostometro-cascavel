@@ -13,16 +13,12 @@ interface LeadFormModalProps {
 
 interface FormData {
   nome: string
-  email: string
-  cidade: string
   dataNascimento: string
   telefone: string
 }
 
 interface FormErrors {
   nome?: string
-  email?: string
-  cidade?: string
   dataNascimento?: string
   telefone?: string
   general?: string
@@ -34,8 +30,6 @@ export function LeadFormModal({ isOpen, onClose, onSuccess }: LeadFormModalProps
   const [showCloseWarning, setShowCloseWarning] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     nome: '',
-    email: '',
-    cidade: '',
     dataNascimento: '',
     telefone: '',
   })
@@ -49,21 +43,6 @@ export function LeadFormModal({ isOpen, onClose, onSuccess }: LeadFormModalProps
       newErrors.nome = 'Nome é obrigatório'
     } else if (formData.nome.trim().length < 2) {
       newErrors.nome = 'Nome deve ter pelo menos 2 caracteres'
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!formData.email) {
-      newErrors.email = 'Email é obrigatório'
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Email inválido'
-    }
-
-    // Cidade validation
-    if (!formData.cidade.trim()) {
-      newErrors.cidade = 'Cidade é obrigatória'
-    } else if (formData.cidade.trim().length < 2) {
-      newErrors.cidade = 'Cidade deve ter pelo menos 2 caracteres'
     }
 
     // Data nascimento validation
@@ -105,7 +84,7 @@ export function LeadFormModal({ isOpen, onClose, onSuccess }: LeadFormModalProps
       }
 
       setShowToast(true)
-      setFormData({ nome: '', email: '', cidade: '', dataNascimento: '', telefone: '' })
+      setFormData({ nome: '', dataNascimento: '', telefone: '' })
 
       // Espera o toast e depois transiciona para o site completo
       setTimeout(() => {
@@ -243,42 +222,6 @@ export function LeadFormModal({ isOpen, onClose, onSuccess }: LeadFormModalProps
                 placeholder="Seu nome"
               />
               {errors.nome && <p className="text-red-400 text-xs mt-1">{errors.nome}</p>}
-            </div>
-
-            {/* Campo Email */}
-            <div>
-              <label className="block text-sm font-medium text-white/90 mb-1">
-                Email *
-              </label>
-              <input
-                type="email"
-                value={formData.email}
-                onChange={(e) => handleInputChange('email', e.target.value)}
-                className={`w-full px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm
-                  border ${errors.email ? 'border-red-500' : 'border-white/20'}
-                  text-white placeholder-white/50
-                  focus:outline-none focus:border-primary transition-colors`}
-                placeholder="seu@email.com"
-              />
-              {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
-            </div>
-
-            {/* Campo Cidade */}
-            <div>
-              <label className="block text-sm font-medium text-white/90 mb-1">
-                Cidade *
-              </label>
-              <input
-                type="text"
-                value={formData.cidade}
-                onChange={(e) => handleInputChange('cidade', e.target.value)}
-                className={`w-full px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm
-                  border ${errors.cidade ? 'border-red-500' : 'border-white/20'}
-                  text-white placeholder-white/50
-                  focus:outline-none focus:border-primary transition-colors`}
-                placeholder="Cascavel"
-              />
-              {errors.cidade && <p className="text-red-400 text-xs mt-1">{errors.cidade}</p>}
             </div>
 
             {/* Campo Data Nascimento */}
