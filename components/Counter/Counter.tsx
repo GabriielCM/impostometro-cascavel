@@ -13,7 +13,7 @@ export function Counter() {
       <img
         src="/images/caricatura.png"
         alt="Caricatura"
-        className="absolute z-0 w-[340px] sm:w-[420px] md:w-[500px] lg:w-[580px] bottom-[52%] sm:bottom-[40%] left-1/2 -translate-x-1/2"
+        className="absolute z-[2] w-[340px] sm:w-[420px] md:w-[500px] lg:w-[580px] bottom-[52%] sm:bottom-[40%] left-1/2 -translate-x-1/2"
       />
 
       {/* Container com borda pulsante */}
